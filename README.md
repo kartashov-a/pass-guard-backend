@@ -5,6 +5,6 @@ in **[PassGuard Android](https://github.com/kartashov-a/pass-guard-android)** re
 
 ### Roadmap
 
-- [ ] CRUD items
+- [X] CRUD items
 - [ ] Add users and authorization
 - [ ] Support different types of data. Like files, secure notes etc.

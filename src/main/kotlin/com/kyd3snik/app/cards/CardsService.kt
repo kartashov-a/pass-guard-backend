@@ -1,5 +1,6 @@
 package com.kyd3snik.app.cards
 
+import com.kyd3snik.app.base.error.errorNotFound
 import com.kyd3snik.app.cards.data.*
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -28,6 +29,6 @@ class CardsService(
     }
 
     private fun requireCard(id: Long) {
-        repository.findByIdOrNull(id) ?: error("Card not found") // TODO: 500 error
+        repository.findByIdOrNull(id) ?: errorNotFound("Card")
     }
 }

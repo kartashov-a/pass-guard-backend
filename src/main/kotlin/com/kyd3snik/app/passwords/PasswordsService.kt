@@ -1,5 +1,6 @@
 package com.kyd3snik.app.passwords
 
+import com.kyd3snik.app.base.error.errorNotFound
 import com.kyd3snik.app.passwords.data.*
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -28,6 +29,6 @@ class PasswordsService(
     }
 
     private fun requirePassword(id: Long) {
-        repository.findByIdOrNull(id) ?: error("Password not found") // TODO: 500 error
+        repository.findByIdOrNull(id) ?: errorNotFound("Password")
     }
 }

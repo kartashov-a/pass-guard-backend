@@ -14,13 +14,13 @@ class CardsService(
         return repository.findAll().map(CardItem::toDto)
     }
 
-    fun createCard(password: CardRequest): CardItemDto {
-        return repository.save(password.toEntity()).toDto()
+    fun createCard(card: CardRequest): CardItemDto {
+        return repository.save(card.toEntity()).toDto()
     }
 
-    fun updateCard(id: Long, password: CardRequest): CardItemDto {
+    fun updateCard(id: Long, card: CardRequest): CardItemDto {
         requireCard(id)
-        return repository.save(password.toEntity()).toDto()
+        return repository.save(card.toEntity()).toDto()
     }
 
     fun deleteCard(id: Long) {
